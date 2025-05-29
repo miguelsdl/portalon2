@@ -1,0 +1,59 @@
+/* styles.css - Archivo CSS principal */
+
+/* Variables globales */
+:root {
+    --primary-color: #2196F3;
+    --secondary-color: #64B5F6;
+    --background-color: #FFFFFF;
+    --text-color: #333333;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsividad básica */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Clases utilitarias */
+.text-center {
+    text-align: center;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
