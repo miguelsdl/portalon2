@@ -57,3 +57,21 @@ body {
 .btn:hover {
     background-color: var(--secondary-color);
 }
+
+/* Columna central con ancho flexible */
+.col-md-6 {
+    flex: 1;
+}
+
+
+/* Columnas laterales con ancho fijo */
+.col-md-3 {
+    flex: 0 0 160px;
+    max-width: 160px;
+}
+
+/* En dispositivos móviles, las columnas se apilan verticalmente */
+.col-md-3, .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
