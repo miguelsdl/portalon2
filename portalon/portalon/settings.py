@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'easy_thumbnails',
+    'filer',
     'portalon',
     'home_portal',
 ]
@@ -69,7 +71,9 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    # BASE_DIR / 'static',
+    BASE_DIR / 'portalon/static',
+
 ]
 WSGI_APPLICATION = 'portalon.wsgi.application'
 

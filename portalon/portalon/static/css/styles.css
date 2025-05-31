@@ -1,6 +1,4 @@
-/* styles.css - Archivo CSS principal */
-
-/* Variables globales */
+/* Variables globales existentes mantienen sin cambios */
 :root {
     --primary-color: #2196F3;
     --secondary-color: #64B5F6;
@@ -8,7 +6,7 @@
     --text-color: #333333;
 }
 
-/* Estilos generales */
+/* Estilos generales existentes mantienen sin cambios */
 * {
     margin: 0;
     padding: 0;
@@ -23,16 +21,20 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Responsividad básica */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
+/* Nuevos estilos para las columnas */
+.col-sidebar {
+    flex: 0 0 160px;
+    max-width: 160px;
+}
+
+.col-main {
+    flex: 1;
+    min-width: 0;
 }
 
 /* Clases utilitarias */
@@ -64,14 +66,16 @@ body {
 }
 
 
-/* Columnas laterales con ancho fijo */
-.col-md-3 {
-    flex: 0 0 160px;
-    max-width: 160px;
-}
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
 
-/* En dispositivos móviles, las columnas se apilan verticalmente */
-.col-md-3, .col-md-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
+    /* En dispositivos móviles, las columnas se apilan verticalmente */
+    .col-sidebar,
+    .col-main {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
