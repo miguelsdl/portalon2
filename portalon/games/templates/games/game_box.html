@@ -1,7 +1,16 @@
 <div class="col-md-4 mb-4">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ game.title }} <i class="bi bi-download"></i></h5>
+            <h5 class="card-title">
+                {% if game.rom %}
+                    <a href="{{ game.rom.url }}" download>
+                        {{ game.title }}
+                        <i class="bi bi-download"></i>
+                    </a>
+                {% else %}
+                    {{ game.title }}
+                {% endif %}
+            </h5>
             <p class="card-text">{{ game.description }}</p>
             {% if game.category %}
                 <span class="badge bg-secondary">{{ game.category.name }}</span>

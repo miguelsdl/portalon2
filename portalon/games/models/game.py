@@ -26,7 +26,7 @@ class Game(models.Model):
         on_delete=models.CASCADE,
         blank=True, null=True,
     )
-
+    checksum = models.CharField(max_length=64, blank=True, null=True)
 
     class Meta:
         verbose_name = _('game')
