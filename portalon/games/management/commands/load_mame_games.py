@@ -1,9 +1,12 @@
 import os
 import hashlib
+import requests
+from bs4 import BeautifulSoup
 from django.core.management.base import BaseCommand
 from django.core.files import File
 from games.models.game import Game
 from games.models.game_platform import GamePlatform
+from games.models.game_category import GameCategory
 
 
 def calculate_checksum(file_path):
@@ -32,12 +35,13 @@ class Command(BaseCommand):
             if filename.lower().endswith('.zip'):
                 title = os.path.splitext(filename)[0]
                 file_path = os.path.join(roms_path, filename)
+
                 with open(file_path, 'rb') as f:
                     game = Game(
                         title=title,
                         description=f'MAME ROM: {filename}',
                         platform=platform,
-                        checksum=calculate_checksum(file_path)
+                        checksum=calculate_checksum(file_path),
                     )
                     game.rom.save(filename, File(f), save=True)
                 count += 1
