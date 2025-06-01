@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'filer',
     'portalon',
     'home_portal',
+    'games',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Configuraciones del sitio
+GAMES_PAGINATION = 45  # Número de juegos por página en la paginación

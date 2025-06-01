@@ -23,7 +23,8 @@ class Game(models.Model):
     # Imagen del juego
     image = FilerImageField(
         verbose_name=_('image'),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        blank=True, null=True,
     )
 
 
